@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid gap-12 border-b border-bone/10 pb-16 md:grid-cols-[1.4fr_1fr] md:items-end">
           <div>
             <div className="font-display flex items-baseline gap-2 text-2xl">
-              KJA <span className="text-sm tracking-[0.2em] opacity-60">&amp; SONS</span>
+              K&amp;K <span className="text-sm tracking-[0.2em] opacity-60">COMPANY</span>
             </div>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-stone">
               A full-service civil contracting company in Kochi. We take an idea and
@@ -78,12 +78,12 @@ export default function Footer() {
         {/* Oversized wordmark */}
         <div className="pointer-events-none select-none overflow-hidden">
           <div className="font-display whitespace-nowrap text-[18vw] leading-[0.8] tracking-tight text-bone/[0.04]">
-            KJA &amp; SONS
+            K&amp;K COMPANY
           </div>
         </div>
 
         <div className="flex flex-col gap-4 border-t border-bone/10 pt-8 text-xs text-stone sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} KJA &amp; Sons®. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} K&amp;K Company®. All rights reserved.</p>
           <p>Built with intent — Kochi, Kerala.</p>
         </div>
       </div>

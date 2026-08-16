@@ -44,14 +44,14 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          aria-label="KJA & Sons home"
+          aria-label="K&K Company home"
           className={`group flex items-baseline gap-1.5 font-display text-lg leading-none tracking-tight transition-colors ${
             minimal ? "text-ink lg:text-bone" : solid ? "text-ink" : "text-bone"
           }`}
         >
-          <span className="text-[1.35rem]">KJA</span>
+          <span className="text-[1.35rem]">K&amp;K</span>
           <span className="text-[0.7rem] font-medium tracking-[0.2em] opacity-60">
-            &amp; SONS
+            COMPANY
           </span>
         </Link>
 

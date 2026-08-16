@@ -15,7 +15,7 @@ export default function Story() {
           <Reveal delay={100} className="md:col-span-4">
             <p className="text-sm leading-relaxed text-stone">
               Built on a family tradition of caring — the same values carried from a
-              1983 Ernakulam workshop to the KJA &amp; Sons of today.
+              1983 Ernakulam workshop to the K&amp;K Company of today.
             </p>
           </Reveal>
         </div>

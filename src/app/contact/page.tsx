@@ -7,7 +7,7 @@ import { Eyebrow } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Start a Project",
   description:
-    "Tell us what you're building. Get a quote from KJA & Sons — civil contracting, architecture, renovation, pools, fabrication and waterproofing in Kochi, Kerala.",
+    "Tell us what you're building. Get a quote from K&K Company — civil contracting, architecture, renovation, pools, fabrication and waterproofing in Kochi, Kerala.",
 };
 
 export default function ContactPage() {

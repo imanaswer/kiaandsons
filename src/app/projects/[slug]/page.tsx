@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     title: w.title,
     description: w.intro,
-    openGraph: { title: `${w.title} · KJA & Sons`, description: w.intro, images: [w.image] },
+    openGraph: { title: `${w.title} · K&K Company`, description: w.intro, images: [w.image] },
   };
 }
 
@@ -101,7 +101,7 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
             <span className="font-mono text-xs text-concrete">Gallery</span>
             <p className="mt-3 max-w-md text-concrete">
               Add completed {w.title.toLowerCase()} photography here — a scroll-driven
-              gallery of real KJA &amp; Sons projects.
+              gallery of real K&amp;K Company projects.
             </p>
             <div className="mt-8">
               <ArrowButton href="/contact" cursor="Start">

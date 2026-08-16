@@ -8,7 +8,7 @@ import { Eyebrow, Reveal } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Architecture, construction, renovation, pools & water, fabrication and waterproofing — the disciplines KJA & Sons delivers under one roof in Kochi, Kerala.",
+    "Architecture, construction, renovation, pools & water, fabrication and waterproofing — the disciplines K&K Company delivers under one roof in Kochi, Kerala.",
 };
 
 export default function ServicesPage() {
@@ -21,7 +21,7 @@ export default function ServicesPage() {
             Six disciplines, one accountable team.
           </h1>
           <p className="mt-6 max-w-xl text-stone">
-            From the first drawing to the final coat of waterproofing, KJA &amp; Sons
+            From the first drawing to the final coat of waterproofing, K&amp;K Company
             manages every trade in-house — so nothing falls between them.
           </p>
         </div>

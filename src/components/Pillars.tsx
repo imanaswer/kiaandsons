@@ -18,7 +18,7 @@ export default function Pillars() {
     <section className="bg-bone py-24 md:py-32">
       <div className="mx-auto max-w-[1600px] px-[var(--spacing-gutter)]">
         <div className="max-w-2xl">
-          <Eyebrow className="text-accent">Why KJA &amp; Sons</Eyebrow>
+          <Eyebrow className="text-accent">Why K&amp;K Company</Eyebrow>
           <h2 className="font-display mt-6 d-2 text-ink">
             Trust is built the same way a structure is.
           </h2>

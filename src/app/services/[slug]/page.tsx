@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     title: s.title,
     description: s.lede,
-    openGraph: { title: `${s.title} · KJA & Sons`, description: s.lede, images: [s.image] },
+    openGraph: { title: `${s.title} · K&K Company`, description: s.lede, images: [s.image] },
   };
 }
 
@@ -91,7 +91,7 @@ export default async function ServiceDetail({ params }: PageProps<"/services/[sl
               <p className="text-sm text-concrete">
                 Project photography for {s.title.toLowerCase()} will appear here.
                 <br />
-                <span className="text-concrete/70">Add real KJA &amp; Sons project images.</span>
+                <span className="text-concrete/70">Add real K&amp;K Company project images.</span>
               </p>
             </div>
           </div>

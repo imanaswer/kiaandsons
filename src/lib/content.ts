@@ -1,11 +1,11 @@
-// Single source of truth for KJA & Sons content.
+// Single source of truth for K&K Company content.
 // FACTS sourced from https://kjasons.com (audited). Do not invent projects,
 // clients, awards, statistics, dates, or values. Illustrative imagery is
 // clearly framed as representative until real project photography is supplied.
 
 export const company = {
-  name: "KJA & Sons",
-  legal: "KJA & Sons®",
+  name: "K&K Company",
+  legal: "K&K Company®",
   tagline: "Built with intent.",
   positioning:
     "A full-service civil contracting company in Kochi. From architecture to handover, we turn an idea into a space that lasts.",
@@ -37,8 +37,8 @@ export const timeline = [
   },
   {
     year: "2012",
-    title: "KJA & Sons",
-    body: "The family tradition is reorganised as KJA & Sons, a full-service civil contracting company serving Kochi and Kerala.",
+    title: "K&K Company",
+    body: "The family tradition is reorganised as K&K Company, a full-service civil contracting company serving Kochi and Kerala.",
   },
   {
     year: "Today",
@@ -286,7 +286,7 @@ export const testimonials = [
     name: "Arun Jose",
     role: "Software Engineer",
     quote:
-      "The team was always available to us to discuss fine details in spite of time limits. We loved working with KJA & Sons.",
+      "The team was always available to us to discuss fine details in spite of time limits. We loved working with K&K Company.",
   },
   {
     name: "Roshan Krishna",

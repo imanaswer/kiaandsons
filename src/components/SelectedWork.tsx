@@ -27,7 +27,39 @@ export default function SelectedWork() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_44%] lg:gap-16">
+        {/* Mobile: rich full-image cards */}
+        <div className="mt-10 space-y-4 lg:hidden">
+          {work.map((w) => (
+            <Reveal key={w.slug}>
+              <Link
+                href={`/projects/${w.slug}`}
+                className="group relative flex min-h-[64vw] items-end overflow-hidden rounded-md bg-graphite"
+              >
+                <Image
+                  src={w.image}
+                  alt={w.title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-active:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
+                <div className="relative w-full p-6 text-bone">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-bone/70">{w.index}</span>
+                    <span className="text-[0.68rem] uppercase tracking-[0.16em] text-bone/75">
+                      {w.discipline}
+                    </span>
+                  </div>
+                  <h3 className="font-display mt-3 text-4xl leading-none tracking-tight">
+                    {w.title}
+                  </h3>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-14 hidden gap-10 lg:grid lg:grid-cols-[1fr_44%] lg:gap-16">
           {/* List */}
           <ul className="order-2 lg:order-1">
             {work.map((w, i) => (

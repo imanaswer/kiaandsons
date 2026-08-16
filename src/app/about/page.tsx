@@ -9,7 +9,7 @@ import { company } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "KJA & Sons traces its roots to K.R. Joseph & Sons, established in Ernakulam in 1983. A family tradition of caring, now a full-service civil contracting company in Kochi.",
+    "K&K Company traces its roots to K.R. Joseph & Sons, established in Ernakulam in 1983. A family tradition of caring, now a full-service civil contracting company in Kochi.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <section className="relative flex min-h-[72svh] items-end overflow-hidden bg-ink text-bone">
         <Image
           src="/images/projects/craftsmen.jpg"
-          alt="KJA & Sons craftsmen on site"
+          alt="K&K Company craftsmen on site"
           fill
           priority
           sizes="100vw"
@@ -27,7 +27,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/70" />
         <div className="relative mx-auto w-full max-w-[1600px] px-[var(--spacing-gutter)] pb-16 pt-32">
-          <Eyebrow className="text-accent-soft">About KJA &amp; Sons</Eyebrow>
+          <Eyebrow className="text-accent-soft">About K&amp;K Company</Eyebrow>
           <h1 className="font-display mt-6 max-w-4xl d-1">
             A family trade, turned turn-key contractor.
           </h1>
@@ -43,7 +43,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={80} className="md:col-span-8">
               <p className="font-display text-[clamp(1.6rem,3vw,2.6rem)] leading-[1.16] tracking-tight text-ink">
-                KJA &amp; Sons is a full-service civil contracting company in Kochi.{" "}
+                K&amp;K Company is a full-service civil contracting company in Kochi.{" "}
                 <span className="text-concrete">
                   Our established systems let us deliver turn-key construction for
                   residential and commercial clients — built on a family tradition of

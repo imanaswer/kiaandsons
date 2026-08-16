@@ -47,6 +47,8 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -55,6 +57,20 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-feature-settings: "ss01", "cv01";
   overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Premium touch behaviour — no blue tap flash, snappy active feedback */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: none) {
+  a:active,
+  button:active {
+    opacity: 0.72;
+    transition: opacity 0.1s ease;
+  }
 }
 
 ::selection {

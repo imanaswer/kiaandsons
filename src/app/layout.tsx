@@ -31,32 +31,32 @@ const siteUrl = "https://kjasons.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "KJA & Sons — Architecture, Engineering & Construction · Kochi",
-    template: "%s · KJA & Sons",
+    default: "K&K Company — Architecture, Engineering & Construction · Kochi",
+    template: "%s · K&K Company",
   },
   description:
-    "KJA & Sons is a full-service civil contracting company in Kochi, Kerala. From architecture and structural design to construction, renovation, pools, fabrication and waterproofing — built with intent.",
+    "K&K Company is a full-service civil contracting company in Kochi, Kerala. From architecture and structural design to construction, renovation, pools, fabrication and waterproofing — built with intent.",
   keywords: [
     "civil contractor Kochi",
     "construction company Kerala",
     "architecture Kochi",
     "swimming pool construction Kerala",
     "renovation Kochi",
-    "KJA & Sons",
+    "K&K Company",
   ],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
     siteName: company.legal,
-    title: "KJA & Sons — Built with intent.",
+    title: "K&K Company — Built with intent.",
     description:
       "A full-service civil contracting company in Kochi. Architecture, construction, renovation, pools, fabrication and waterproofing.",
     images: [{ url: "/images/projects/villa-dusk.jpg", width: 1200, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KJA & Sons — Built with intent.",
+    title: "K&K Company — Built with intent.",
     description:
       "Full-service civil contracting in Kochi. Architecture · Construction · Craft.",
     images: ["/images/projects/villa-dusk.jpg"],

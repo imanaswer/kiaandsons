@@ -8,7 +8,7 @@ import { Eyebrow, Reveal } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "The disciplines KJA & Sons delivers end-to-end — private residences, commercial builds, water & landscape, renovation and fabrication in Kochi, Kerala.",
+    "The disciplines K&K Company delivers end-to-end — private residences, commercial builds, water & landscape, renovation and fabrication in Kochi, Kerala.",
 };
 
 export default function ProjectsPage() {
@@ -19,7 +19,7 @@ export default function ProjectsPage() {
           <Eyebrow className="text-accent-soft">Selected Work</Eyebrow>
           <h1 className="font-display mt-6 max-w-4xl d-1">The work, by discipline.</h1>
           <p className="mt-6 max-w-xl text-stone">
-            KJA &amp; Sons is adding project photography. The imagery below is
+            K&amp;K Company is adding project photography. The imagery below is
             representative of the work we deliver — not specific completed projects.
           </p>
         </div>
