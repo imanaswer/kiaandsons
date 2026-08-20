@@ -3,6 +3,7 @@ import { Reveal } from "./ui";
 const keywords = [
   "Architecture",
   "Civil Contracting",
+  "Interior Design",
   "Design & Build",
   "Renovation",
   "Structural Strengthening",
@@ -28,9 +29,9 @@ export default function Manifesto() {
             <p className="font-display text-[clamp(1.8rem,3.6vw,3.1rem)] leading-[1.12] tracking-tight text-ink">
               Architecture is not decoration. Construction is not just execution.{" "}
               <span className="text-concrete">
-                We take an idea and turn it into a physical space — planned by
-                architects, resolved by engineers, and built by craftsmen who care
-                how it lasts.
+                We take an idea and carry it from concept to completion — planned by
+                architects, resolved by engineers, built by craftsmen, and finished
+                as interiors that care how you live.
               </span>
             </p>
           </Reveal>

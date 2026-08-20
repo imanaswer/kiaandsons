@@ -4,6 +4,7 @@ import "./globals.css";
 import { company } from "@/lib/content";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
+import WhatsAppFab from "@/components/WhatsAppFab";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 
@@ -35,11 +36,13 @@ export const metadata: Metadata = {
     template: "%s · K&K Company",
   },
   description:
-    "K&K Company is a full-service civil contracting company in Kochi, Kerala. From architecture and structural design to construction, renovation, pools, fabrication and waterproofing — built with intent.",
+    "K&K Company is a full-service design-and-build company in Kochi, Kerala. From architecture and structural design to construction, interior design, renovation, pools, fabrication and waterproofing — concept to completion, built with intent.",
   keywords: [
     "civil contractor Kochi",
     "construction company Kerala",
     "architecture Kochi",
+    "interior designers Kochi",
+    "interior design Kerala",
     "swimming pool construction Kerala",
     "renovation Kochi",
     "K&K Company",
@@ -106,6 +109,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <ScrollProgress />
         <Nav />
+        <WhatsAppFab />
         <SmoothScroll>
           <main id="main">{children}</main>
           <Footer />

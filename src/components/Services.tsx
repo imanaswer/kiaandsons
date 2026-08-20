@@ -35,12 +35,12 @@ export default function Services() {
           <div>
             <Eyebrow className="text-accent-soft">What We Do</Eyebrow>
             <h2 className="font-display mt-6 max-w-2xl d-1">
-              Six disciplines, one accountable team.
+              Seven disciplines, one accountable team.
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-stone">
-            More than a construction company — architecture, engineering and craft
-            managed together, so nothing falls between trades.
+            More than a construction company — architecture, engineering, interiors
+            and craft managed together, so nothing falls between trades.
           </p>
         </div>
 

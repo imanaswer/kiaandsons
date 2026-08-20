@@ -115,8 +115,8 @@ export default function Hero() {
           style={{ animationDelay: "0.75s" }}
         >
           <p className="max-w-md text-base leading-relaxed text-bone/75 md:text-lg">
-            We take an idea and turn it into a physical space — architecture,
-            engineering and construction, under one roof.
+            We take an idea and turn it into a finished space — architecture,
+            construction and interiors, under one roof.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <ArrowButton href="/contact" tone="bone" variant="solid" cursor="Start">

@@ -107,8 +107,24 @@ export const services: Service[] = [
     image: "/images/projects/commercial-facade.jpg",
   },
   {
-    slug: "renovation",
+    slug: "interiors",
     index: "03",
+    title: "Interior Design",
+    short: "Interiors designed and delivered with the build — concept to styling.",
+    lede: "Interiors resolved as part of the architecture — space planning, bespoke joinery, lighting and finishes delivered turn-key, so the inside is as considered as the structure.",
+    scope: [
+      "Interior design & space planning",
+      "Bespoke joinery & furnishing",
+      "Lighting & electrical layout",
+      "Home automation",
+      "Finishes, materials & styling",
+      "Turnkey fit-out",
+    ],
+    image: "/images/projects/interiors-living.jpg",
+  },
+  {
+    slug: "renovation",
+    index: "04",
     title: "Renovation",
     short: "Giving purpose back to spaces that have outgrown theirs.",
     lede: "Renovation, remodeling and strengthening that respects what stands and rebuilds it for how you live now.",
@@ -122,7 +138,7 @@ export const services: Service[] = [
   },
   {
     slug: "pools-and-water",
-    index: "04",
+    index: "05",
     title: "Pools & Water",
     short: "Swimming pools, koi ponds and living water gardens.",
     lede: "Water as architecture — pools, ponds and living water gardens engineered to stay clear, calm and beautiful.",
@@ -138,7 +154,7 @@ export const services: Service[] = [
   },
   {
     slug: "fabrication",
-    index: "05",
+    index: "06",
     title: "Fabrication & Stone",
     short: "Handrails, stairs, truss works and natural stone.",
     lede: "Metal and stone worked to fit — handrails, stairs, steel trusses and natural stone detailed and installed in-house.",
@@ -153,7 +169,7 @@ export const services: Service[] = [
   },
   {
     slug: "waterproofing",
-    index: "06",
+    index: "07",
     title: "Waterproofing",
     short: "Reclaiming control over water, heat and time.",
     lede: "Waterproofing, leakproofing and protective coatings that keep concrete structures dry, cool and lasting.",
@@ -170,9 +186,7 @@ export const services: Service[] = [
 // Additional capabilities offered (shown as a supporting list, not full pages).
 export const alsoOffer = [
   "Electrical works",
-  "Home automation",
   "Solar energy solutions",
-  "Interior & furnishings",
   "Sports flooring",
   "Land survey",
 ];
@@ -217,9 +231,18 @@ export const work: Work[] = [
       "Swimming pools, koi ponds and living water gardens engineered to stay clear and calm, set into considered landscape.",
   },
   {
-    slug: "renovation",
+    slug: "interiors",
     index: "04",
-    title: "Renovation & Interiors",
+    title: "Interiors & Styling",
+    discipline: "Interior Design",
+    image: "/images/projects/interiors-living.jpg",
+    intro:
+      "Interiors resolved with the architecture — space planning, bespoke joinery, lighting and finishes delivered turn-key, so the inside is as considered as the structure.",
+  },
+  {
+    slug: "renovation",
+    index: "05",
+    title: "Renovation & Remodeling",
     discipline: "Remodeling · Strengthening",
     image: "/images/projects/renovation-interior.jpg",
     intro:
@@ -227,7 +250,7 @@ export const work: Work[] = [
   },
   {
     slug: "fabrication",
-    index: "05",
+    index: "06",
     title: "Fabrication & Stone",
     discipline: "Metal · Stone · Detail",
     image: "/images/projects/landscape-stone.jpg",
