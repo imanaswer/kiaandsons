@@ -8,7 +8,8 @@ import { Eyebrow, Reveal } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "The disciplines K&K Company delivers end-to-end — private residences, commercial builds, water & landscape, renovation and fabrication in Kochi, Kerala.",
+    "The disciplines K&K Company delivers end-to-end — private residences, commercial builds, interiors, water & landscape, renovation and fabrication in Kochi, Kerala.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {

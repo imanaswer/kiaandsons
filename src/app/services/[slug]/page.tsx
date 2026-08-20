@@ -19,9 +19,12 @@ export async function generateMetadata({
   return {
     title: s.title,
     description: s.lede,
+    alternates: { canonical: `/services/${s.slug}` },
     openGraph: { title: `${s.title} · K&K Company`, description: s.lede, images: [s.image] },
   };
 }
+
+const siteUrl = "https://kjasons.com";
 
 export default async function ServiceDetail({ params }: PageProps<"/services/[slug]">) {
   const { slug } = await params;
@@ -31,8 +34,34 @@ export default async function ServiceDetail({ params }: PageProps<"/services/[sl
   const idx = services.findIndex((x) => x.slug === slug);
   const nextSvc = services[(idx + 1) % services.length];
 
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: s.title,
+      description: s.lede,
+      serviceType: s.title,
+      areaServed: { "@type": "State", name: "Kerala" },
+      provider: { "@type": "GeneralContractor", name: "K&K Company", url: siteUrl },
+      url: `${siteUrl}/services/${s.slug}`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
+        { "@type": "ListItem", position: 3, name: s.title, item: `${siteUrl}/services/${s.slug}` },
+      ],
+    },
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       {/* Hero */}
       <section className="relative flex min-h-[80svh] items-end overflow-hidden bg-ink text-bone">
         <Image src={s.image} alt={s.title} fill priority sizes="100vw" className="object-cover opacity-45" />

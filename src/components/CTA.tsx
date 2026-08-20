@@ -29,15 +29,19 @@ export default function CTA() {
             <ArrowButton href="/contact" tone="bone" variant="solid" cursor="Start">
               Start a Project
             </ArrowButton>
-            <ArrowButton
-              href={`tel:${company.phoneQuote.replace(/\s/g, "")}`}
-              tone="bone"
-              variant="outline"
-              cursor="Call"
-            >
-              Call Our Team
+            <ArrowButton href="/book" tone="bone" variant="outline" cursor="Book">
+              Book a Consultation
             </ArrowButton>
           </div>
+          <p className="mt-6 text-sm text-stone">
+            Or call us on{" "}
+            <a
+              href={`tel:${company.phoneQuote.replace(/\s/g, "")}`}
+              className="text-bone underline decoration-accent-soft decoration-2 underline-offset-4 hover:text-accent-soft"
+            >
+              {company.phoneQuote}
+            </a>
+          </p>
         </Reveal>
       </div>
     </section>

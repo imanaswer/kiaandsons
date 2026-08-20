@@ -19,9 +19,12 @@ export async function generateMetadata({
   return {
     title: w.title,
     description: w.intro,
+    alternates: { canonical: `/projects/${w.slug}` },
     openGraph: { title: `${w.title} · K&K Company`, description: w.intro, images: [w.image] },
   };
 }
+
+const siteUrl = "https://kjasons.com";
 
 export default async function ProjectDetail({ params }: PageProps<"/projects/[slug]">) {
   const { slug } = await params;
@@ -31,8 +34,22 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
   const idx = work.findIndex((x) => x.slug === slug);
   const nextWork = work[(idx + 1) % work.length];
 
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Work", item: `${siteUrl}/projects` },
+      { "@type": "ListItem", position: 3, name: w.title, item: `${siteUrl}/projects/${w.slug}` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       {/* 01 — Hero */}
       <section className="relative flex h-[100svh] min-h-[600px] items-end overflow-hidden bg-ink text-bone">
         <Image src={w.image} alt={w.title} fill priority sizes="100vw" className="object-cover" />

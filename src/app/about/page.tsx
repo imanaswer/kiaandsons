@@ -9,7 +9,8 @@ import { company } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "K&K Company traces its roots to K.R. Joseph & Sons, established in Ernakulam in 1983. A family tradition of caring, now a full-service civil contracting company in Kochi.",
+    "K&K Company traces its roots to K.R. Joseph & Sons, established in Ernakulam in 1983. A family tradition of caring, now a full-service design-and-build company in Kochi.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

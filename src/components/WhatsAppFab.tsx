@@ -10,8 +10,8 @@ const message = encodeURIComponent(
 
 export default function WhatsAppFab() {
   const pathname = usePathname();
-  // Keep the quote page distraction-free (it already is the conversion flow).
-  if (pathname === "/contact") return null;
+  // Keep conversion pages distraction-free (they are already the flow).
+  if (pathname === "/contact" || pathname === "/book") return null;
 
   return (
     <a

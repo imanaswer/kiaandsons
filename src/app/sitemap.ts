@@ -5,7 +5,14 @@ const base = "https://kjasons.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticRoutes = ["", "/about", "/services", "/projects", "/contact"].map((p) => ({
+  const staticRoutes = [
+    "",
+    "/about",
+    "/services",
+    "/projects",
+    "/book",
+    "/contact",
+  ].map((p) => ({
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

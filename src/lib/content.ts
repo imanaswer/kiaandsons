@@ -329,10 +329,54 @@ export const nav = [
 // Options for the multi-step quote form (step 1).
 export const projectTypes = [
   "New Construction",
-  "Renovation",
   "Architecture",
+  "Interior Design",
+  "Renovation",
   "Pool / Pond",
   "Fabrication",
   "Waterproofing",
   "Other",
+];
+
+// FAQ — honest, generic answers (no fabricated timelines, prices, or counts).
+export const faqs = [
+  {
+    q: "Do you handle interiors as well as construction?",
+    a: "Yes. Architecture, structural engineering, construction and interior design are all delivered in-house by one accountable team — so your project runs from concept to a finished, styled space without handing off between separate firms.",
+  },
+  {
+    q: "Which areas do you work in?",
+    a: "We are based in Kochi and take on residential and commercial projects across Kerala. Reach out with your location and we'll tell you how we can help.",
+  },
+  {
+    q: "Can you take a project from design all the way through to handover?",
+    a: "Yes — this is how we prefer to work. We can start at the first sketch and building permits, carry the project through structural design, construction and fabrication, and finish with interiors and services for a turn-key handover.",
+  },
+  {
+    q: "Do you take on renovations and smaller works, or only new builds?",
+    a: "Both. We handle new construction, renovation and remodeling, structural strengthening, and focused works such as swimming pools, natural stone, fabrication and waterproofing.",
+  },
+  {
+    q: "How do timelines and budgets work?",
+    a: "Every project is estimated individually against your brief, site and budget. After a consultation we prepare a transparent estimate and a planned schedule before work begins — timelines depend on the scope and are agreed up front.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Start a project brief or book a free consultation. Tell us what you're building and we'll get back to you to discuss the details — there's no obligation.",
+  },
+];
+
+// Book-a-consultation flow options.
+export const consultationModes = [
+  { label: "Phone call", note: "A quick call to talk it through" },
+  { label: "Video call", note: "Screen-share plans and references" },
+  { label: "Site visit", note: "We visit your plot or property" },
+  { label: "Studio visit", note: "Meet us at our Kochi studio" },
+];
+
+export const consultationTimes = [
+  "This week",
+  "Next week",
+  "This month",
+  "Flexible",
 ];

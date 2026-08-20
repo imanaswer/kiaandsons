@@ -10,8 +10,8 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  // Contact is a focused conversion page — show only the logo, no menu.
-  const minimal = pathname === "/contact";
+  // Conversion pages are focused — show only the logo, no menu.
+  const minimal = pathname === "/contact" || pathname === "/book";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);

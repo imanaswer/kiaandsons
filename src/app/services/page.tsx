@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Architecture, construction, interior design, renovation, pools & water, fabrication and waterproofing — the disciplines K&K Company delivers under one roof in Kochi, Kerala.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

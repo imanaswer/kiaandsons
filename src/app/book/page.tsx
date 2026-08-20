@@ -1,24 +1,30 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import QuoteForm from "@/components/QuoteForm";
+import BookingForm from "@/components/BookingForm";
 import { company } from "@/lib/content";
 import { Eyebrow } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Start a Project",
+  title: "Book a Consultation",
   description:
-    "Tell us what you're building. Get a quote from K&K Company — civil contracting, architecture, interior design, renovation, pools, fabrication and waterproofing in Kochi, Kerala.",
-  alternates: { canonical: "/contact" },
+    "Book a free, no-obligation consultation with K&K Company in Kochi — by phone, video, site visit or at our studio. Architecture, construction and interior design under one roof.",
+  alternates: { canonical: "/book" },
+  openGraph: {
+    title: "Book a Consultation · K&K Company",
+    description:
+      "A free, no-obligation consultation with K&K Company, Kochi — architecture, construction and interiors.",
+    images: ["/images/projects/interiors-living.jpg"],
+  },
 };
 
-export default function ContactPage() {
+export default function BookPage() {
   const tel = (n: string) => `tel:${n.replace(/\s/g, "")}`;
   return (
     <div className="grid min-h-screen lg:grid-cols-[42%_1fr]">
       {/* Left — art-directed panel */}
       <aside className="relative hidden overflow-hidden bg-ink lg:block">
         <Image
-          src="/images/projects/cta-dusk.jpg"
+          src="/images/projects/interiors-living.jpg"
           alt=""
           fill
           sizes="42vw"
@@ -28,13 +34,13 @@ export default function ContactPage() {
         <div className="grain absolute inset-0" />
         <div className="relative flex h-full flex-col justify-between p-12 text-bone">
           <div className="pt-24">
-            <Eyebrow className="text-accent-soft">Start a Project</Eyebrow>
+            <Eyebrow className="text-accent-soft">Book a Consultation</Eyebrow>
             <h1 className="font-display mt-6 text-[clamp(2.5rem,4vw,4rem)] leading-[0.95] tracking-tight">
-              Let&apos;s build something worth keeping.
+              Let&apos;s talk it through.
             </h1>
             <p className="mt-6 max-w-sm text-stone">
-              A few questions to understand your project. It takes under a minute,
-              and there&apos;s no obligation.
+              A free, no-obligation conversation about your project — by phone, video,
+              a visit to your site, or at our Kochi studio.
             </p>
           </div>
           <div className="space-y-4 text-sm">
@@ -60,9 +66,17 @@ export default function ContactPage() {
         </div>
       </aside>
 
-      {/* Right — form */}
+      {/* Right — booking form */}
       <section className="flex items-center px-[var(--spacing-gutter)] py-28 lg:py-24">
-        <QuoteForm />
+        <div className="w-full">
+          <div className="mb-10 lg:hidden">
+            <Eyebrow className="text-accent">Book a Consultation</Eyebrow>
+            <h1 className="font-display mt-4 text-4xl tracking-tight text-ink">
+              Let&apos;s talk it through.
+            </h1>
+          </div>
+          <BookingForm />
+        </div>
       </section>
     </div>
   );

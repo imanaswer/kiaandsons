@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Archivo, Fraunces } from "next/font/google";
 import "./globals.css";
-import { company } from "@/lib/content";
+import { company, services } from "@/lib/content";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
 import WhatsAppFab from "@/components/WhatsAppFab";
@@ -70,13 +70,18 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "GeneralContractor",
+  "@type": ["GeneralContractor", "HomeAndConstructionBusiness"],
+  "@id": `${siteUrl}/#business`,
   name: company.legal,
+  alternateName: company.name,
   description:
-    "Full-service civil contracting company in Kochi, Kerala — architecture, construction, renovation, pools, fabrication and waterproofing.",
+    "Full-service design-and-build company in Kochi, Kerala — architecture, construction, interior design, renovation, pools, fabrication and waterproofing under one roof.",
   url: siteUrl,
   telephone: company.phonePrimary,
   email: company.email,
+  foundingDate: "1983",
+  image: `${siteUrl}/images/projects/villa-dusk.jpg`,
+  logo: `${siteUrl}/icon.svg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: company.address.line1,
@@ -85,8 +90,26 @@ const localBusinessSchema = {
     addressRegion: "Kerala",
     addressCountry: "IN",
   },
-  areaServed: "Kochi, Kerala",
+  geo: { "@type": "GeoCoordinates", latitude: 9.9312, longitude: 76.2673 },
+  areaServed: [
+    { "@type": "City", name: "Kochi" },
+    { "@type": "City", name: "Ernakulam" },
+    { "@type": "State", name: "Kerala" },
+  ],
   sameAs: company.socials.map((s) => s.href),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Services",
+    itemListElement: services.map((s) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: s.title,
+        description: s.short,
+        url: `${siteUrl}/services/${s.slug}`,
+      },
+    })),
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
