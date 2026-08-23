@@ -97,8 +97,8 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className={`relative z-[81] flex h-10 w-10 items-center justify-center md:hidden ${
-            solid ? "text-ink" : "text-bone"
+          className={`relative z-[81] -mr-2 flex h-10 w-10 items-center justify-center outline-none focus-visible:ring-1 focus-visible:ring-current md:hidden ${
+            open ? "text-bone" : solid ? "text-ink" : "text-bone"
           }`}
         >
           <span className="relative block h-3 w-6">
@@ -126,29 +126,32 @@ export default function Nav() {
         }}
         className="fixed inset-0 z-[79] flex flex-col bg-ink text-bone transition-[clip-path] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden"
       >
-        <div className="grain relative flex flex-1 flex-col justify-center px-[var(--spacing-gutter)] pt-24">
-          <ul className="space-y-1">
+        <div className="grain relative flex flex-1 flex-col justify-center px-[var(--spacing-gutter)] py-24">
+          <ul>
             {nav.map((item, i) => (
               <li
                 key={item.href}
                 style={{
-                  transitionDelay: open ? `${120 + i * 70}ms` : "0ms",
+                  transitionDelay: open ? `${120 + i * 60}ms` : "0ms",
                 }}
                 className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                  open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                  open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
               >
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="font-display block border-b border-bone/10 py-4 text-[3rem] leading-none tracking-tight"
+                  className="font-display flex items-center justify-between border-b border-bone/10 py-4 text-[2.2rem] leading-none tracking-tight"
                 >
                   {item.label}
+                  <svg viewBox="0 0 16 14" className="h-4 w-5 text-accent-soft">
+                    <path d="M1 7h13M9 2l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-12 flex flex-col gap-4 text-sm text-stone">
+          <div className="mt-10 flex flex-col gap-3 text-sm text-stone">
             <a href={`tel:${company.phonePrimary.replace(/\s/g, "")}`} onClick={() => setOpen(false)}>
               {company.phonePrimary}
             </a>

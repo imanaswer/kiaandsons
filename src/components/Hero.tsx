@@ -86,9 +86,14 @@ export default function Hero() {
       >
         <div className="mb-auto pt-24" />
 
-        <p className="eyebrow overflow-hidden text-bone/80">
-          <span className="anim-rise inline-block" style={{ animationDelay: "0.2s" }}>
-            Home Building · Interiors · Trivandrum · Kollam · Alappuzha
+        <p className="overflow-hidden text-bone/80">
+          <span
+            className="anim-rise block font-medium uppercase leading-relaxed tracking-[0.16em] text-[0.62rem] sm:text-[0.72rem] sm:tracking-[0.24em]"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Home Building · Interiors
+            <span className="hidden sm:inline"> · </span>
+            <span className="block sm:inline">Trivandrum · Kollam · Alappuzha</span>
           </span>
         </p>
 

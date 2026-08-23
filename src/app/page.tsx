@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import SelectedWork from "@/components/SelectedWork";
 import Services from "@/components/Services";
-import Studio from "@/components/Studio";
 import Faq from "@/components/Faq";
 import CTA from "@/components/CTA";
 import { faqs } from "@/lib/content";
@@ -42,9 +41,7 @@ export default async function Home() {
       <SelectedWork items={items} />
       {/* 3 — Services + import */}
       <Services />
-      {/* 4 — Studio (story · why · company) */}
-      <Studio />
-      {/* 5 — Closing (FAQ + CTA) */}
+      {/* 4 — Closing (FAQ + CTA) */}
       <Faq />
       <CTA />
     </>

@@ -11,9 +11,9 @@ export default function Footer() {
   if (pathname.startsWith("/admin")) return null;
   return (
     <footer className="grain relative overflow-hidden bg-ink text-bone">
-      <div className="relative mx-auto max-w-[1600px] px-[var(--spacing-gutter)] py-20 md:py-28">
+      <div className="relative mx-auto max-w-[1600px] px-[var(--spacing-gutter)] py-16 md:py-28">
         {/* Top: statement + CTA */}
-        <div className="grid gap-12 border-b border-bone/10 pb-16 md:grid-cols-[1.4fr_1fr] md:items-end">
+        <div className="grid gap-8 border-b border-bone/10 pb-12 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-12 md:pb-16">
           <div>
             <div className="font-display flex items-baseline gap-2 text-2xl">
               K&amp;K <span className="text-sm tracking-[0.2em] opacity-60">BUILDERS</span>
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div className="grid gap-10 py-16 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-14 md:grid-cols-4 md:py-16">
           <div>
             <h3 className="eyebrow text-stone">Services</h3>
             <ul className="mt-5 space-y-2.5 text-sm text-bone/80">
@@ -91,7 +91,7 @@ export default function Footer() {
 
         {/* Oversized wordmark */}
         <div className="pointer-events-none select-none overflow-hidden">
-          <div className="font-display whitespace-nowrap text-[18vw] leading-[0.8] tracking-tight text-bone/[0.04]">
+          <div className="font-display whitespace-nowrap text-[16vw] leading-[0.8] tracking-tight text-bone/[0.05] md:text-[18vw]">
             K&amp;K BUILDERS
           </div>
         </div>
