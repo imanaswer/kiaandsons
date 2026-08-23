@@ -8,7 +8,7 @@ import { Eyebrow, Reveal } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Architecture, construction, interior design, renovation, pools & water, fabrication and waterproofing — the disciplines K&K Company delivers under one roof in Kochi, Kerala.",
+    "Architecture, construction, interior design, renovation, pools & water, fabrication and waterproofing — the disciplines K&K Builders delivers under one roof in Trivandrum, Kerala.",
   alternates: { canonical: "/services" },
 };
 
@@ -22,7 +22,7 @@ export default function ServicesPage() {
             Seven disciplines, one accountable team.
           </h1>
           <p className="mt-6 max-w-xl text-stone">
-            From the first drawing to the final styled interior, K&amp;K Company
+            From the first drawing to the final styled interior, K&amp;K Builders
             manages every trade in-house — so nothing falls between them.
           </p>
         </div>

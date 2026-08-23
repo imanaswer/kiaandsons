@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { services } from "@/lib/content";
+import { services, importOffer } from "@/lib/content";
 import { Eyebrow } from "./ui";
 
 export default function Services() {
@@ -112,6 +112,37 @@ export default function Services() {
             );
           })}
         </ul>
+
+        {/* Import & sourcing highlight */}
+        <div className="mt-14 rounded-md border border-bone/12 bg-bone/[0.03] p-8 md:mt-16 md:p-10">
+          <div className="flex items-start gap-4">
+            <svg viewBox="0 0 24 24" className="mt-1 h-9 w-9 shrink-0 text-accent-soft" fill="none" stroke="currentColor" strokeWidth="1.3">
+              <path d="M3 9l9-5 9 5v6l-9 5-9-5V9z" strokeLinejoin="round" />
+              <path d="M3 9l9 5 9-5M12 14v6" strokeLinejoin="round" />
+            </svg>
+            <div>
+              <span className="eyebrow text-accent-soft">{importOffer.eyebrow}</span>
+              <h3 className="font-display mt-2 text-2xl leading-tight tracking-tight text-bone md:text-3xl">
+                {importOffer.title}
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stone">{importOffer.body}</p>
+            </div>
+          </div>
+
+          {/* Process */}
+          <ol className="mt-8 grid gap-6 border-t border-bone/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+            {importOffer.steps.map((s) => (
+              <li key={s.n}>
+                <span className="font-mono text-xs text-accent-soft">{s.n}</span>
+                <h4 className="font-display mt-1 text-lg tracking-tight text-bone">{s.t}</h4>
+                <p className="mt-1 text-sm leading-relaxed text-stone">{s.d}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-xs uppercase tracking-[0.16em] text-concrete">
+            {importOffer.catalogueNote}
+          </p>
+        </div>
       </div>
     </section>
   );

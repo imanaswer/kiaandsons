@@ -10,6 +10,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isAdmin = pathname.startsWith("/admin");
   // Conversion pages are focused — show only the logo, no menu.
   const minimal = pathname === "/contact" || pathname === "/book";
 
@@ -29,6 +30,8 @@ export default function Nav() {
 
   const solid = scrolled || open;
 
+  if (isAdmin) return null;
+
   return (
     <header className="fixed inset-x-0 top-0 z-[80]">
       {!minimal && (
@@ -44,22 +47,22 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          aria-label="K&K Company home"
+          aria-label="K&K Builders home"
           className={`group flex items-baseline gap-1.5 font-display text-lg leading-none tracking-tight transition-colors ${
             minimal ? "text-ink lg:text-bone" : solid ? "text-ink" : "text-bone"
           }`}
         >
           <span className="text-[1.35rem]">K&amp;K</span>
           <span className="text-[0.7rem] font-medium tracking-[0.2em] opacity-60">
-            COMPANY
+            BUILDERS
           </span>
         </Link>
 
         {/* Desktop links */}
         {!minimal && (
-        <div className="hidden items-center gap-9 md:flex">
+        <div className="hidden items-center gap-10 md:flex">
           <ul
-            className={`flex items-center gap-9 text-[0.82rem] font-medium tracking-tight transition-colors ${
+            className={`flex items-center gap-8 text-[1.02rem] font-medium tracking-tight transition-colors ${
               solid ? "text-ink" : "text-bone"
             }`}
           >
@@ -81,7 +84,7 @@ export default function Nav() {
             variant={solid ? "solid" : "outline"}
             tone={solid ? "ink" : "bone"}
             cursor="Start"
-            className="!px-5 !py-2.5 !text-[0.8rem]"
+            className="!text-[0.9rem]"
           >
             Start a Project
           </ArrowButton>

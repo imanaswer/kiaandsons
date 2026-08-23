@@ -4,7 +4,7 @@ import "./globals.css";
 import { company, services } from "@/lib/content";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
-import WhatsAppFab from "@/components/WhatsAppFab";
+import FloatingActions from "@/components/FloatingActions";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 
@@ -32,36 +32,38 @@ const siteUrl = "https://kjasons.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "K&K Company — Architecture, Engineering & Construction · Kochi",
-    template: "%s · K&K Company",
+    default: "K&K Builders — Architecture, Engineering & Construction · Trivandrum",
+    template: "%s · K&K Builders",
   },
   description:
-    "K&K Company is a full-service design-and-build company in Kochi, Kerala. From architecture and structural design to construction, interior design, renovation, pools, fabrication and waterproofing — concept to completion, built with intent.",
+    "K&K Builders is a full-service design-and-build company in Trivandrum, Kerala. From architecture and structural design to construction, interior design, renovation, pools, fabrication and waterproofing — concept to completion, built with intent.",
   keywords: [
-    "civil contractor Kochi",
-    "construction company Kerala",
-    "architecture Kochi",
-    "interior designers Kochi",
-    "interior design Kerala",
-    "swimming pool construction Kerala",
-    "renovation Kochi",
-    "K&K Company",
+    "builders in Trivandrum",
+    "best home builders Trivandrum",
+    "construction company Trivandrum",
+    "builders in Kollam",
+    "builders in Alappuzha",
+    "home construction Kerala",
+    "interior designers Trivandrum",
+    "3D home design Trivandrum",
+    "furniture import from China Kerala",
+    "K&K Builders",
   ],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
     siteName: company.legal,
-    title: "K&K Company — Built with intent.",
+    title: "K&K Builders — Built with intent.",
     description:
-      "A full-service civil contracting company in Kochi. Architecture, construction, renovation, pools, fabrication and waterproofing.",
+      "A full-service civil contracting company in Trivandrum. Architecture, construction, renovation, pools, fabrication and waterproofing.",
     images: [{ url: "/images/projects/villa-dusk.jpg", width: 1200, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "K&K Company — Built with intent.",
+    title: "K&K Builders — Built with intent.",
     description:
-      "Full-service civil contracting in Kochi. Architecture · Construction · Craft.",
+      "Full-service civil contracting in Trivandrum. Architecture · Construction · Craft.",
     images: ["/images/projects/villa-dusk.jpg"],
   },
   alternates: { canonical: siteUrl },
@@ -75,13 +77,13 @@ const localBusinessSchema = {
   name: company.legal,
   alternateName: company.name,
   description:
-    "Full-service design-and-build company in Kochi, Kerala — architecture, construction, interior design, renovation, pools, fabrication and waterproofing under one roof.",
+    "Full-service design-and-build company in Trivandrum, Kerala — architecture, construction, interior design, renovation, pools, fabrication and waterproofing under one roof.",
   url: siteUrl,
   telephone: company.phonePrimary,
   email: company.email,
-  foundingDate: "1983",
   image: `${siteUrl}/images/projects/villa-dusk.jpg`,
   logo: `${siteUrl}/icon.svg`,
+  hasMap: company.mapsUrl,
   address: {
     "@type": "PostalAddress",
     streetAddress: company.address.line1,
@@ -90,10 +92,11 @@ const localBusinessSchema = {
     addressRegion: "Kerala",
     addressCountry: "IN",
   },
-  geo: { "@type": "GeoCoordinates", latitude: 9.9312, longitude: 76.2673 },
+  geo: { "@type": "GeoCoordinates", latitude: 8.5241, longitude: 76.9366 },
   areaServed: [
-    { "@type": "City", name: "Kochi" },
-    { "@type": "City", name: "Ernakulam" },
+    { "@type": "City", name: "Trivandrum" },
+    { "@type": "City", name: "Kollam" },
+    { "@type": "City", name: "Alappuzha" },
     { "@type": "State", name: "Kerala" },
   ],
   sameAs: company.socials.map((s) => s.href),
@@ -132,7 +135,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <ScrollProgress />
         <Nav />
-        <WhatsAppFab />
+        <FloatingActions />
         <SmoothScroll>
           <main id="main">{children}</main>
           <Footer />

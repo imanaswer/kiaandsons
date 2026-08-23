@@ -7,7 +7,7 @@ import { Eyebrow } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Start a Project",
   description:
-    "Tell us what you're building. Get a quote from K&K Company — civil contracting, architecture, interior design, renovation, pools, fabrication and waterproofing in Kochi, Kerala.",
+    "Tell us what you're building. Get a quote from K&K Builders — civil contracting, architecture, interior design, renovation, pools, fabrication and waterproofing in Trivandrum, Kerala.",
   alternates: { canonical: "/contact" },
 };
 
@@ -51,10 +51,11 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-stone">Studio</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-stone">Where we work</p>
               <p className="mt-1 text-stone">
-                {company.address.line1}, {company.address.city} – {company.address.pin}
+                {company.address.city}, {company.address.region}
               </p>
+              <p className="mt-1 text-stone">Serving {company.areasServed.join(" · ")}</p>
             </div>
           </div>
         </div>

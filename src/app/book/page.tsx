@@ -7,12 +7,12 @@ import { Eyebrow } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Book a Consultation",
   description:
-    "Book a free, no-obligation consultation with K&K Company in Kochi — by phone, video, site visit or at our studio. Architecture, construction and interior design under one roof.",
+    "Book a free, no-obligation consultation with K&K Builders in Trivandrum — by phone, video, site visit or at our studio. Architecture, construction and interior design under one roof.",
   alternates: { canonical: "/book" },
   openGraph: {
-    title: "Book a Consultation · K&K Company",
+    title: "Book a Consultation · K&K Builders",
     description:
-      "A free, no-obligation consultation with K&K Company, Kochi — architecture, construction and interiors.",
+      "A free, no-obligation consultation with K&K Builders, Trivandrum — architecture, construction and interiors.",
     images: ["/images/projects/interiors-living.jpg"],
   },
 };
@@ -40,7 +40,7 @@ export default function BookPage() {
             </h1>
             <p className="mt-6 max-w-sm text-stone">
               A free, no-obligation conversation about your project — by phone, video,
-              a visit to your site, or at our Kochi studio.
+              a visit to your site, or at our Trivandrum studio.
             </p>
           </div>
           <div className="space-y-4 text-sm">
@@ -57,9 +57,9 @@ export default function BookPage() {
               </a>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-stone">Studio</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-stone">Where we work</p>
               <p className="mt-1 text-stone">
-                {company.address.line1}, {company.address.city} – {company.address.pin}
+                {company.address.city}, {company.address.region} · {company.areasServed.join(" · ")}
               </p>
             </div>
           </div>

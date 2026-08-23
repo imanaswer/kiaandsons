@@ -170,7 +170,7 @@ export default function BookingForm() {
         </label>
         <label className="block">
           <span className="mb-2 block text-xs uppercase tracking-[0.16em] text-concrete">Location</span>
-          <input value={data.location} onChange={(e) => set("location", e.target.value)} placeholder="e.g. Kochi" className="field" />
+          <input value={data.location} onChange={(e) => set("location", e.target.value)} placeholder="e.g. Trivandrum" className="field" />
         </label>
       </div>
 

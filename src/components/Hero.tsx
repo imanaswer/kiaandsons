@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ArrowButton } from "./ui";
-import { company } from "@/lib/content";
 
 export default function Hero() {
   const mediaRef = useRef<HTMLDivElement>(null);
@@ -85,11 +84,11 @@ export default function Hero() {
         ref={contentRef}
         className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-[var(--spacing-gutter)] pb-16 will-change-transform md:pb-20"
       >
-        <div className="mb-auto pt-32" />
+        <div className="mb-auto pt-24" />
 
         <p className="eyebrow overflow-hidden text-bone/80">
           <span className="anim-rise inline-block" style={{ animationDelay: "0.2s" }}>
-            Civil Contracting · Architecture · Kochi · Since {company.founded}
+            Home Building · Interiors · Trivandrum · Kollam · Alappuzha
           </span>
         </p>
 

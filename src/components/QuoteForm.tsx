@@ -204,7 +204,7 @@ export default function QuoteForm() {
                 <input
                   value={data.location}
                   onChange={(e) => set("location", e.target.value)}
-                  placeholder="e.g. Kochi"
+                  placeholder="e.g. Trivandrum"
                   className="field"
                 />
               </Field>

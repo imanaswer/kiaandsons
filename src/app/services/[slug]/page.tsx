@@ -20,7 +20,7 @@ export async function generateMetadata({
     title: s.title,
     description: s.lede,
     alternates: { canonical: `/services/${s.slug}` },
-    openGraph: { title: `${s.title} · K&K Company`, description: s.lede, images: [s.image] },
+    openGraph: { title: `${s.title} · K&K Builders`, description: s.lede, images: [s.image] },
   };
 }
 
@@ -42,7 +42,7 @@ export default async function ServiceDetail({ params }: PageProps<"/services/[sl
       description: s.lede,
       serviceType: s.title,
       areaServed: { "@type": "State", name: "Kerala" },
-      provider: { "@type": "GeneralContractor", name: "K&K Company", url: siteUrl },
+      provider: { "@type": "GeneralContractor", name: "K&K Builders", url: siteUrl },
       url: `${siteUrl}/services/${s.slug}`,
     },
     {
@@ -120,7 +120,7 @@ export default async function ServiceDetail({ params }: PageProps<"/services/[sl
               <p className="text-sm text-concrete">
                 Project photography for {s.title.toLowerCase()} will appear here.
                 <br />
-                <span className="text-concrete/70">Add real K&amp;K Company project images.</span>
+                <span className="text-concrete/70">Add real K&amp;K Builders project images.</span>
               </p>
             </div>
           </div>

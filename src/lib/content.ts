@@ -1,69 +1,59 @@
-// Single source of truth for K&K Company content.
-// FACTS sourced from https://kjasons.com (audited). Do not invent projects,
-// clients, awards, statistics, dates, or values. Illustrative imagery is
-// clearly framed as representative until real project photography is supplied.
+// Single source of truth for K&K Builders content.
+// FACTS from the client discovery questionnaire. Do not invent projects,
+// clients, awards, statistics, dates, or values. Contact details below are
+// PLACEHOLDERS pending the client's real phone/email/address/socials.
+// Illustrative imagery is representative until real project photography lands
+// (managed via the /admin CMS).
 
 export const company = {
-  name: "K&K Company",
-  legal: "K&K Company®",
+  name: "K&K Builders",
+  legal: "K&K Builders®",
   tagline: "Built with intent.",
+  differentiator: "One destination for your complete home journey.",
   positioning:
-    "A full-service civil contracting company in Kochi. From architecture to handover, we turn an idea into a space that lasts.",
-  founded: 1983,
-  phonePrimary: "+91 9400726668",
-  phoneQuote: "+91 9061226668",
-  email: "info@kjasons.com",
+    "A complete home-building company based in Trivandrum, serving Kerala. From architecture and 3D planning to construction, interiors and imported furniture — one destination for your complete home journey.",
+  // PLACEHOLDERS — replace with K&K Builders' real details before launch.
+  phonePrimary: "+91 00000 00000",
+  phoneQuote: "+91 00000 00000",
+  email: "hello@kkbuilders.in",
+  mapsUrl: "https://share.google/iIr9Fteu9xzHsTlZP",
   address: {
-    line1: "CC – 15/68 A, West Karuvelipady",
-    city: "Kochi",
-    pin: "682005",
+    line1: "", // street address — to be provided
+    city: "Trivandrum",
+    pin: "",
     region: "Kerala, India",
   },
-  socials: [
-    { label: "Instagram", href: "https://www.instagram.com/kja.sons/" },
-    { label: "Facebook", href: "https://www.facebook.com/kjaandsons" },
-    { label: "YouTube", href: "https://www.youtube.com/c/KJAandSons" },
-    { label: "Twitter", href: "https://twitter.com/kja_sons" },
-    { label: "Pinterest", href: "https://in.pinterest.com/kjaandsonsindia" },
-  ],
+  areasServed: ["Trivandrum", "Kollam", "Alappuzha"],
+  // Real social handles to be provided; empty hides the links.
+  socials: [] as { label: string; href: string }[],
 } as const;
-
-// Verified history (provided by the company). Two dated milestones + present.
-export const timeline = [
-  {
-    year: "1983",
-    title: "K.R. Joseph & Sons",
-    body: "The practice begins in Ernakulam — a family trade built on caring, craftsmanship and doing right by the client.",
-  },
-  {
-    year: "2012",
-    title: "K&K Company",
-    body: "The family tradition is reorganised as K&K Company, a full-service civil contracting company serving Kochi and Kerala.",
-  },
-  {
-    year: "Today",
-    title: "Design to handover",
-    body: "Architecture, engineering and construction under one roof — turn-key delivery for residential and commercial clients.",
-  },
-] as const;
 
 export const pillars = [
   {
-    title: "Quality Craftsmanship",
-    body: "Materials and finishing chosen and executed to the highest standard — the detail is the structure.",
+    title: "One Destination",
+    body: "Design, 3D planning, construction, interiors and imported furniture — handled by one accountable team, from first talk to handover.",
   },
   {
-    title: "Innovation & Adaptability",
-    body: "We bring current methods and materials to every build, adapting the approach to the site and the brief.",
+    title: "Quality Craftsmanship",
+    body: "Materials and finishing chosen and executed to a high standard — the detail is the structure.",
   },
   {
     title: "Client-Centric Approach",
-    body: "Available for the fine details, transparent on timelines, and driven to exceed what clients expect.",
+    body: "Available for the fine details, transparent on timelines, budget and permits — including bank-loan assistance.",
   },
   {
-    title: "Integrity & Ethics",
-    body: "A family tradition of caring — honest work, honest advice, and a build you can rely on for the long term.",
+    title: "After You Move In",
+    body: "We don't disappear at handover — maintenance and after-sales service keep your home right for the long term.",
   },
+] as const;
+
+// The complete home journey (from the client's described process).
+export const journey = [
+  { n: "01", t: "Talk", d: "Reach us on WhatsApp or by phone and tell us what you're planning." },
+  { n: "02", t: "Site visit & consultation", d: "We visit your site and discuss the brief, budget and timeline." },
+  { n: "03", t: "Design & 3D", d: "Architecture, structural design and 3D visualisation, so you see it before it's built." },
+  { n: "04", t: "Build", d: "Construction managed end-to-end — materials, labour, permits and bank-loan assistance." },
+  { n: "05", t: "Interiors & handover", d: "Interiors, imported furniture and lighting — then maintenance and after-sales." },
 ] as const;
 
 export type Service = {
@@ -82,10 +72,11 @@ export const services: Service[] = [
     index: "01",
     title: "Architecture",
     short: "Design that reads the site, the light and the way you live.",
-    lede: "Architecture and building design that begins with how a space will be lived in — then resolves it into drawings that build cleanly.",
+    lede: "Architecture and building design that begins with how a space will be lived in — then resolves it into 3D visualisations and drawings that build cleanly.",
     scope: [
       "Architectural services",
       "Building design",
+      "3D planning & visualisation",
       "Building permits",
       "Estimations",
       "Structural design",
@@ -97,12 +88,17 @@ export const services: Service[] = [
     slug: "construction",
     index: "02",
     title: "Construction",
-    short: "Turn-key civil building, managed with engineering discipline.",
-    lede: "From structural planning to final handover, we manage the build with engineering discipline and attention to detail.",
+    short: "Turn-key residential & commercial building, one accountable team.",
+    lede: "From structural planning to final handover, we manage the build with engineering discipline and attention to detail — residential, commercial, villas, apartments, renovations and extensions.",
     scope: [
-      "Civil building contracting",
-      "New construction",
+      "Residential & commercial construction",
+      "Villas, apartments & extensions",
       "Design & build",
+      "Construction packages (solar, furnishing)",
+      "Materials, procurement & labour",
+      "Approvals, permits & bank-loan assistance",
+      "Electrical, plumbing, HVAC & finishes",
+      "Maintenance & after-sales service",
     ],
     image: "/images/projects/commercial-facade.jpg",
   },
@@ -182,6 +178,20 @@ export const services: Service[] = [
     image: "/images/craft/concrete-macro.jpg",
   },
 ];
+
+// Import & sourcing — furniture and lighting brought in from China for clients.
+export const importOffer = {
+  eyebrow: "Import & Sourcing",
+  title: "Furniture & lighting, from China to your doorstep.",
+  body: "Beyond the build, we import furniture and lighting directly from China for our clients — curated to your interior and quality-checked. We handle international shipping, local delivery and installation, and every piece is covered by warranty.",
+  steps: [
+    { n: "01", t: "Select", d: "Choose from our catalogue or brief us on the look." },
+    { n: "02", t: "Ship", d: "We handle sourcing and international shipping." },
+    { n: "03", t: "Deliver", d: "Local delivery to your project, coordinated with the build." },
+    { n: "04", t: "Install & warrant", d: "We install it, and it's covered by warranty." },
+  ],
+  catalogueNote: "A full product catalogue is on the way.",
+};
 
 // Additional capabilities offered (shown as a supporting list, not full pages).
 export const alsoOffer = [
@@ -298,30 +308,11 @@ export const craft = [
   { title: "Stone", image: "/images/craft/stone-macro.jpg" },
 ];
 
-export const testimonials = [
-  {
-    name: "Dias V",
-    role: "Doctor",
-    quote:
-      "The quality of the building materials and the finishing is by far the best you can get, and everything got done on time.",
-  },
-  {
-    name: "Arun Jose",
-    role: "Software Engineer",
-    quote:
-      "The team was always available to us to discuss fine details in spite of time limits. We loved working with K&K Company.",
-  },
-  {
-    name: "Roshan Krishna",
-    role: "Lawyer",
-    quote:
-      "We highly appreciate the team for the handrail job completed within the time period, with perfection.",
-  },
-];
 
 export const nav = [
   { label: "Work", href: "/#work" },
   { label: "Services", href: "/services" },
+  { label: "Journal", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -346,7 +337,7 @@ export const faqs = [
   },
   {
     q: "Which areas do you work in?",
-    a: "We are based in Kochi and take on residential and commercial projects across Kerala. Reach out with your location and we'll tell you how we can help.",
+    a: "We are based in Trivandrum and take on residential and commercial projects across Kerala. Reach out with your location and we'll tell you how we can help.",
   },
   {
     q: "Can you take a project from design all the way through to handover?",
@@ -371,7 +362,7 @@ export const consultationModes = [
   { label: "Phone call", note: "A quick call to talk it through" },
   { label: "Video call", note: "Screen-share plans and references" },
   { label: "Site visit", note: "We visit your plot or property" },
-  { label: "Studio visit", note: "Meet us at our Kochi studio" },
+  { label: "Studio visit", note: "Meet us at our Trivandrum studio" },
 ];
 
 export const consultationTimes = [

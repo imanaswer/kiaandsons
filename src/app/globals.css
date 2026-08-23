@@ -97,21 +97,21 @@ button {
 /* Eyebrow / label */
 .eyebrow {
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-/* Fluid display scale */
+/* Fluid display scale — larger, bolder */
 .d-hero {
-  font-size: clamp(3rem, 12.5vw, 12rem);
+  font-size: clamp(3.4rem, 11.5vw, 12.5rem);
 }
 .d-1 {
-  font-size: clamp(2.4rem, 7vw, 6.5rem);
+  font-size: clamp(2.8rem, 8vw, 8rem);
 }
 .d-2 {
-  font-size: clamp(1.9rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5.2vw, 4.6rem);
 }
 
 /* Custom cursor — hide native on pointer-fine devices */

@@ -3,36 +3,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTA from "@/components/CTA";
-import { work, craft } from "@/lib/content";
+import { craft } from "@/lib/content";
+import { getProject, getProjects } from "@/lib/data";
 import { Eyebrow, Reveal, ArrowButton } from "@/components/ui";
 
-export function generateStaticParams() {
-  return work.map((w) => ({ slug: w.slug }));
+export const revalidate = 300;
+const siteUrl = "https://kjasons.com";
+
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps<"/projects/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const w = work.find((x) => x.slug === slug);
+  const w = await getProject(slug);
   if (!w) return { title: "Work" };
   return {
     title: w.title,
-    description: w.intro,
+    description: w.summary,
     alternates: { canonical: `/projects/${w.slug}` },
-    openGraph: { title: `${w.title} · K&K Company`, description: w.intro, images: [w.image] },
+    openGraph: { title: `${w.title} · K&K Builders`, description: w.summary, images: [w.cover_image] },
   };
 }
 
-const siteUrl = "https://kjasons.com";
-
 export default async function ProjectDetail({ params }: PageProps<"/projects/[slug]">) {
   const { slug } = await params;
-  const w = work.find((x) => x.slug === slug);
+  const w = await getProject(slug);
   if (!w) notFound();
 
-  const idx = work.findIndex((x) => x.slug === slug);
-  const nextWork = work[(idx + 1) % work.length];
+  const all = await getProjects();
+  const idx = all.findIndex((x) => x.slug === slug);
+  const nextWork = all[(idx + 1) % all.length] ?? w;
+  const meta = [w.category, w.location, w.year].filter(Boolean).join(" · ") || w.discipline;
 
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -46,19 +51,17 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+
       {/* 01 — Hero */}
       <section className="relative flex h-[100svh] min-h-[600px] items-end overflow-hidden bg-ink text-bone">
-        <Image src={w.image} alt={w.title} fill priority sizes="100vw" className="object-cover" />
+        <Image src={w.cover_image} alt={w.title} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-ink/50" />
         <div className="relative mx-auto w-full max-w-[1600px] px-[var(--spacing-gutter)] pb-16 pt-32">
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.16em] text-bone/70">
             <Link href="/projects" className="hover:text-accent-soft">Work</Link>
             <span>/</span>
-            <span>{w.discipline}</span>
+            <span>{meta}</span>
           </div>
           <h1 className="font-display mt-5 d-hero">{w.title}</h1>
         </div>
@@ -73,33 +76,50 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
             </Reveal>
             <Reveal delay={80} className="md:col-span-9">
               <p className="font-display text-[clamp(1.7rem,3vw,2.8rem)] leading-[1.15] tracking-tight text-ink">
-                {w.intro}
+                {w.summary}
               </p>
+              {w.body && (
+                <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-concrete">
+                  {w.body.split(/\n{2,}/).filter(Boolean).map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+              )}
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 03 — Large imagery + placeholder */}
+      {/* 03 — Large imagery */}
       <section className="bg-bone pb-8">
         <div className="mx-auto max-w-[1600px] px-[var(--spacing-gutter)]">
-          <div className="relative aspect-[21/9] overflow-hidden rounded-sm">
-            <Image src={w.image} alt={`${w.title} — representative`} fill sizes="100vw" className="object-cover" />
+          <div className="relative aspect-[21/9] overflow-hidden rounded-md">
+            <Image src={w.cover_image} alt={w.title} fill sizes="100vw" className="object-cover" />
           </div>
-          <p className="mt-3 text-xs text-concrete">
-            Representative imagery. Real project photography will replace this.
-          </p>
         </div>
       </section>
 
-      {/* 04 — Materials */}
+      {/* 04 — Gallery (if provided) */}
+      {w.gallery && w.gallery.length > 0 && (
+        <section className="bg-bone py-8">
+          <div className="mx-auto grid max-w-[1600px] gap-4 px-[var(--spacing-gutter)] sm:grid-cols-2">
+            {w.gallery.map((src, i) => (
+              <Reveal key={i}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-md">
+                  <Image src={src} alt={`${w.title} — ${i + 1}`} fill sizes="50vw" className="object-cover" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 05 — Materials */}
       <section className="bg-bone py-20 md:py-28">
         <div className="mx-auto max-w-[1600px] px-[var(--spacing-gutter)]">
           <Eyebrow className="text-accent">Materials &amp; Craft</Eyebrow>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {craft.map((c) => (
               <Reveal key={c.title}>
-                <figure className="relative aspect-square overflow-hidden rounded-sm">
+                <figure className="relative aspect-square overflow-hidden rounded-md">
                   <Image src={c.image} alt={c.title} fill sizes="33vw" className="object-cover" />
                   <figcaption className="absolute bottom-0 left-0 p-5 font-display text-xl text-bone">
                     {c.title}
@@ -108,23 +128,8 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 05 — Placeholder gallery for owner */}
-      <section className="bg-paper py-20">
-        <div className="mx-auto max-w-[1600px] px-[var(--spacing-gutter)]">
-          <div className="flex flex-col items-center justify-center rounded-sm border border-dashed border-ink/20 p-14 text-center">
-            <span className="font-mono text-xs text-concrete">Gallery</span>
-            <p className="mt-3 max-w-md text-concrete">
-              Add completed {w.title.toLowerCase()} photography here — a scroll-driven
-              gallery of real K&amp;K Company projects.
-            </p>
-            <div className="mt-8">
-              <ArrowButton href="/contact" cursor="Start">
-                Start a Project
-              </ArrowButton>
-            </div>
+          <div className="mt-12">
+            <ArrowButton href="/contact" cursor="Start">Start a Project</ArrowButton>
           </div>
         </div>
       </section>

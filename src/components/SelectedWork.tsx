@@ -3,11 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { work } from "@/lib/content";
 import { Eyebrow, Reveal } from "./ui";
 
-export default function SelectedWork() {
+export type WorkItem = {
+  slug: string;
+  index: string;
+  title: string;
+  discipline: string;
+  image: string;
+  intro: string;
+};
+
+export default function SelectedWork({ items }: { items: WorkItem[] }) {
   const [active, setActive] = useState(0);
+  const work = items;
+  if (work.length === 0) return null;
 
   return (
     <section id="work" className="scroll-mt-24 bg-bone py-24 md:py-36">
