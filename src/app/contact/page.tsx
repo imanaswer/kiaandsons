@@ -7,7 +7,7 @@ import { Eyebrow } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Start a Project",
   description:
-    "Tell us what you're building. Get a quote from K&K Builders — civil contracting, architecture, interior design, renovation, pools, fabrication and waterproofing in Trivandrum, Kerala.",
+    "Tell us what you're building. Get a quote from K&K Builders — civil contracting, architecture, interior design, imported furniture & lighting, renovation, pools, fabrication and waterproofing in Trivandrum, Kerala.",
   alternates: { canonical: "/contact" },
 };
 

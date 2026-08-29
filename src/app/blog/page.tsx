@@ -8,9 +8,19 @@ import { Eyebrow, Reveal } from "@/components/ui";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Journal",
+  title: "Journal · Architecture, Construction & Design Insights in Kerala",
   description:
-    "Notes on architecture, construction and interiors from K&K Builders — how we work, what we build, and how we source for clients in Trivandrum, Kerala.",
+    "Expert insights on house construction costs in Kerala, modern tropical villa design, structural waterproofing, luxury swimming pools, custom joinery, and direct furniture import.",
+  keywords: [
+    "Kerala home construction",
+    "House construction cost Kerala",
+    "Modern tropical villa design",
+    "Trivandrum builders",
+    "Structural waterproofing Kerala",
+    "Swimming pool builders Kerala",
+    "Imported furniture China",
+    "Bespoke interiors Kerala",
+  ],
   alternates: { canonical: "/blog" },
 };
 
@@ -29,10 +39,11 @@ export default async function BlogPage() {
     <>
       <section className="bg-ink px-[var(--spacing-gutter)] pb-16 pt-40 text-bone">
         <div className="mx-auto max-w-[1600px]">
-          <Eyebrow className="text-accent-soft">Journal</Eyebrow>
+          <Eyebrow className="text-accent-soft">Journal &amp; Insights</Eyebrow>
           <h1 className="font-display mt-6 max-w-4xl d-1">Notes from the studio.</h1>
-          <p className="mt-6 max-w-xl text-stone">
-            How we work, what we build, and how we source — written by the team.
+          <p className="mt-6 max-w-2xl text-stone">
+            Architectural thinking, construction cost engineering, structural durability,
+            and luxury interior sourcing in Kerala — written by our team.
           </p>
         </div>
       </section>
@@ -45,25 +56,38 @@ export default async function BlogPage() {
             <div className="grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
               {posts.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 80}>
-                  <Link href={`/blog/${p.slug}`} className="group block">
+                  <Link href={`/blog/${p.slug}`} className="group flex flex-col h-full">
                     <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-graphite">
                       {p.cover_image && (
                         <Image
                           src={p.cover_image}
                           alt={p.title}
                           fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                         />
                       )}
+                      {p.tags && p.tags[0] && (
+                        <span className="absolute top-3 left-3 rounded-full bg-ink/80 backdrop-blur-sm px-3 py-1 text-[0.7rem] uppercase tracking-wider text-bone font-medium">
+                          {p.tags[0]}
+                        </span>
+                      )}
                     </div>
-                    <p className="mt-5 text-xs uppercase tracking-[0.16em] text-concrete">
-                      {fmt(p.published_at)}
-                    </p>
-                    <h2 className="font-display mt-2 text-2xl leading-tight tracking-tight text-ink transition-colors group-hover:text-accent">
+                    <div className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-concrete">
+                      <span>{fmt(p.published_at)}</span>
+                      {p.reading_time && (
+                        <>
+                          <span className="text-concrete/40">·</span>
+                          <span className="font-mono text-accent">{p.reading_time}</span>
+                        </>
+                      )}
+                    </div>
+                    <h2 className="font-display mt-2.5 text-2xl leading-tight tracking-tight text-ink transition-colors group-hover:text-accent">
                       {p.title}
                     </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-concrete">{p.excerpt}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-concrete line-clamp-3">
+                      {p.excerpt}
+                    </p>
                   </Link>
                 </Reveal>
               ))}

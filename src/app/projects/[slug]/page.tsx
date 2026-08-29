@@ -49,6 +49,8 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
     ],
   };
 
+  const craftItems = w.craft && w.craft.length > 0 ? w.craft : craft;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
@@ -117,7 +119,7 @@ export default async function ProjectDetail({ params }: PageProps<"/projects/[sl
         <div className="mx-auto max-w-[1600px] px-[var(--spacing-gutter)]">
           <Eyebrow className="text-accent">Materials &amp; Craft</Eyebrow>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {craft.map((c) => (
+            {craftItems.map((c) => (
               <Reveal key={c.title}>
                 <figure className="relative aspect-square overflow-hidden rounded-md">
                   <Image src={c.image} alt={c.title} fill sizes="33vw" className="object-cover" />

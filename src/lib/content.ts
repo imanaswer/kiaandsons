@@ -12,10 +12,9 @@ export const company = {
   differentiator: "One destination for your complete home journey.",
   positioning:
     "A complete home-building company based in Trivandrum, serving Kerala. From architecture and 3D planning to construction, interiors and imported furniture — one destination for your complete home journey.",
-  // PLACEHOLDERS — replace with K&K Builders' real details before launch.
-  phonePrimary: "+91 00000 00000",
-  phoneQuote: "+91 00000 00000",
-  email: "hello@kkbuilders.in",
+  phonePrimary: "+91 96335 38285",
+  phoneQuote: "+91 96335 38285",
+  email: "projects.kandkbuilders@gmail.com",
   mapsUrl: "https://share.google/iIr9Fteu9xzHsTlZP",
   address: {
     line1: "", // street address — to be provided
@@ -201,6 +200,11 @@ export const alsoOffer = [
   "Land survey",
 ];
 
+export type CraftItem = {
+  title: string;
+  image: string;
+};
+
 // "Selected Work" — framed as capability areas with representative imagery,
 // NOT as specific completed projects (no invented client/location/value/date).
 export type Work = {
@@ -210,6 +214,7 @@ export type Work = {
   discipline: string;
   image: string;
   intro: string;
+  craft: CraftItem[];
 };
 
 export const work: Work[] = [
@@ -221,6 +226,11 @@ export const work: Work[] = [
     image: "/images/projects/villa-dusk.jpg",
     intro:
       "Homes built around light, material and the way a family moves through a space — resolved from first sketch to final handover.",
+    craft: [
+      { title: "Exposed Concrete", image: "/images/craft/concrete-macro.jpg" },
+      { title: "Teak & Timber", image: "/images/craft/timber-macro.jpg" },
+      { title: "Natural Stone", image: "/images/craft/stone-macro.jpg" },
+    ],
   },
   {
     slug: "commercial",
@@ -230,6 +240,11 @@ export const work: Work[] = [
     image: "/images/projects/commercial-facade.jpg",
     intro:
       "Clean, durable commercial structures delivered turn-key, with the engineering discipline a working building demands.",
+    craft: [
+      { title: "Structural Steel", image: "/images/craft/steel-macro.jpg" },
+      { title: "Reinforced Concrete", image: "/images/craft/concrete-macro.jpg" },
+      { title: "Architectural Glazing", image: "/images/craft/glass-facade-macro.jpg" },
+    ],
   },
   {
     slug: "water-landscape",
@@ -239,6 +254,11 @@ export const work: Work[] = [
     image: "/images/projects/pool-water-garden.jpg",
     intro:
       "Swimming pools, koi ponds and living water gardens engineered to stay clear and calm, set into considered landscape.",
+    craft: [
+      { title: "Pool Mosaic", image: "/images/craft/pool-mosaic-macro.jpg" },
+      { title: "Natural Stone", image: "/images/craft/stone-macro.jpg" },
+      { title: "Hydraulic Concrete", image: "/images/craft/concrete-macro.jpg" },
+    ],
   },
   {
     slug: "interiors",
@@ -248,6 +268,11 @@ export const work: Work[] = [
     image: "/images/projects/interiors-living.jpg",
     intro:
       "Interiors resolved with the architecture — space planning, bespoke joinery, lighting and finishes delivered turn-key, so the inside is as considered as the structure.",
+    craft: [
+      { title: "Imported Marble", image: "/images/craft/marble-macro.jpg" },
+      { title: "Teak & Fine Veneer", image: "/images/craft/timber-macro.jpg" },
+      { title: "Brushed Brass", image: "/images/craft/brass-macro.jpg" },
+    ],
   },
   {
     slug: "renovation",
@@ -257,6 +282,11 @@ export const work: Work[] = [
     image: "/images/projects/renovation-interior.jpg",
     intro:
       "Renewing and strengthening what stands — giving purpose back to spaces that have outgrown their original one.",
+    craft: [
+      { title: "Structural Steel Retrofit", image: "/images/craft/steel-macro.jpg" },
+      { title: "Lime Plaster & Masonry", image: "/images/craft/lime-plaster-macro.jpg" },
+      { title: "Microcement & Screed", image: "/images/craft/concrete-macro.jpg" },
+    ],
   },
   {
     slug: "fabrication",
@@ -266,6 +296,11 @@ export const work: Work[] = [
     image: "/images/projects/landscape-stone.jpg",
     intro:
       "Handrails, stairs, trusses and natural stone worked in-house and installed to fit — where the detail becomes the structure.",
+    craft: [
+      { title: "TIG-Welded Steel", image: "/images/craft/steel-macro.jpg" },
+      { title: "Natural Granite & Slate", image: "/images/craft/stone-macro.jpg" },
+      { title: "Architectural Brass", image: "/images/craft/brass-macro.jpg" },
+    ],
   },
 ];
 
@@ -322,6 +357,7 @@ export const projectTypes = [
   "New Construction",
   "Architecture",
   "Interior Design",
+  "Imported Furniture & Lighting",
   "Renovation",
   "Pool / Pond",
   "Fabrication",
