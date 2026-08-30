@@ -155,7 +155,7 @@ export default function Nav() {
             <a href={`tel:${company.phonePrimary.replace(/\s/g, "")}`} onClick={() => setOpen(false)}>
               {company.phonePrimary}
             </a>
-            <a href={`mailto:${company.email}`} onClick={() => setOpen(false)}>
+            <a href={`mailto:${company.email}`} onClick={() => setOpen(false)} className="break-all">
               {company.email}
             </a>
             <ArrowButton

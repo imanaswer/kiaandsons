@@ -31,44 +31,44 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-14 md:grid-cols-4 md:py-16">
-          <div>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-14 sm:gap-x-10 md:grid-cols-4 md:py-16">
+          <div className="min-w-0">
             <h3 className="eyebrow text-stone">Services</h3>
             <ul className="mt-5 space-y-2.5 text-sm text-bone/80">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="hover:text-accent-soft">
+                  <Link href={`/services/${s.slug}`} className="hover:text-accent-soft transition-colors">
                     {s.title}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="eyebrow text-stone">Company</h3>
             <ul className="mt-5 space-y-2.5 text-sm text-bone/80">
-              <li><Link href="/#work" className="hover:text-accent-soft">Selected Work</Link></li>
-              <li><Link href="/about" className="hover:text-accent-soft">About</Link></li>
-              <li><Link href="/services" className="hover:text-accent-soft">Services</Link></li>
-              <li><Link href="/blog" className="hover:text-accent-soft">Journal</Link></li>
-              <li><Link href="/#faq" className="hover:text-accent-soft">FAQ</Link></li>
-              <li><Link href="/book" className="hover:text-accent-soft">Book a Consultation</Link></li>
-              <li><Link href="/contact" className="hover:text-accent-soft">Get a Quote</Link></li>
+              <li><Link href="/#work" className="hover:text-accent-soft transition-colors">Selected Work</Link></li>
+              <li><Link href="/about" className="hover:text-accent-soft transition-colors">About</Link></li>
+              <li><Link href="/services" className="hover:text-accent-soft transition-colors">Services</Link></li>
+              <li><Link href="/blog" className="hover:text-accent-soft transition-colors">Journal</Link></li>
+              <li><Link href="/#faq" className="hover:text-accent-soft transition-colors">FAQ</Link></li>
+              <li><Link href="/book" className="hover:text-accent-soft transition-colors">Book a Consultation</Link></li>
+              <li><Link href="/contact" className="hover:text-accent-soft transition-colors">Get a Quote</Link></li>
             </ul>
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="eyebrow text-stone">Contact</h3>
             <ul className="mt-5 space-y-2.5 text-sm text-bone/80">
-              <li><a href={tel(company.phonePrimary)} className="hover:text-accent-soft">{company.phonePrimary}</a></li>
-              <li><a href={`mailto:${company.email}`} className="hover:text-accent-soft">{company.email}</a></li>
+              <li><a href={tel(company.phonePrimary)} className="hover:text-accent-soft transition-colors">{company.phonePrimary}</a></li>
+              <li className="break-all"><a href={`mailto:${company.email}`} className="hover:text-accent-soft transition-colors">{company.email}</a></li>
               <li>
-                <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent-soft">
+                <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent-soft transition-colors">
                   Find us on Google
                 </a>
               </li>
             </ul>
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="eyebrow text-stone">Where We Work</h3>
             <address className="mt-5 text-sm not-italic leading-relaxed text-bone/80">
               {company.address.line1 && (<>{company.address.line1}<br /></>)}
@@ -80,7 +80,7 @@ export default function Footer() {
             {company.socials.length > 0 && (
               <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-stone">
                 {company.socials.map((s) => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="hover:text-accent-soft">
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="hover:text-accent-soft transition-colors">
                     {s.label}
                   </a>
                 ))}

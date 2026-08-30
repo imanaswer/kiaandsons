@@ -52,7 +52,7 @@ export default function BookPage() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.16em] text-stone">Email</p>
-              <a href={`mailto:${company.email}`} className="mt-1 block text-lg hover:text-accent-soft">
+              <a href={`mailto:${company.email}`} className="mt-1 block text-lg hover:text-accent-soft break-all">
                 {company.email}
               </a>
             </div>

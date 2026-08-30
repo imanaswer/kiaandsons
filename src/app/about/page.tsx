@@ -117,7 +117,7 @@ export default function AboutPage() {
       <section className="border-t border-ink/10 bg-bone py-16">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-[var(--spacing-gutter)] text-sm text-concrete sm:flex-row sm:items-center sm:justify-between">
           <p>Serving {company.areasServed.join(" · ")} — {company.address.region}</p>
-          <a href={`mailto:${company.email}`} className="hover:text-ink">
+          <a href={`mailto:${company.email}`} className="hover:text-ink break-all">
             {company.email}
           </a>
         </div>
