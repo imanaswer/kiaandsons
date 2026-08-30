@@ -89,11 +89,12 @@ export default function Hero() {
         <p className="overflow-hidden text-bone/80">
           <span
             className="anim-rise block font-medium uppercase leading-relaxed tracking-[0.16em] text-[0.62rem] sm:text-[0.72rem] sm:tracking-[0.24em]"
-            style={{ animationDelay: "0.2s" }}
           >
-            Home Building · Interiors
+            K&K Builders · Top Builders in Trivandrum
             <span className="hidden sm:inline"> · </span>
-            <span className="block sm:inline">Trivandrum · Kollam · Alappuzha</span>
+            <span className="block sm:inline">
+              Kerala · Kollam · Alappuzha
+            </span>
           </span>
         </p>
 
@@ -119,8 +120,9 @@ export default function Hero() {
           style={{ animationDelay: "0.75s" }}
         >
           <p className="max-w-md text-base leading-relaxed text-bone/75 md:text-lg">
-            We take an idea and turn it into a finished space — architecture,
-            construction and interiors, under one roof.
+            K&K Builders is a full-service design and build company in Trivandrum,
+            Kerala. We bring architecture, construction, interiors and engineering
+            together under one roof.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <ArrowButton href="/contact" tone="bone" variant="solid" cursor="Start">

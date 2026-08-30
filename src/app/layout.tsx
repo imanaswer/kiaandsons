@@ -30,8 +30,15 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-/* IMPORTANT: Your live domain */
+/**
+ * Canonical production URL
+ */
 const siteUrl = "https://www.kandkbuilders.com";
+
+const siteName = "K&K Builders";
+
+const siteDescription =
+  "K&K Builders is a design and construction company in Trivandrum, Kerala, offering architecture, construction, interiors, renovation, swimming pools, fabrication and waterproofing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -41,28 +48,45 @@ export const metadata: Metadata = {
     template: "%s | K&K Builders",
   },
 
-  description:
-    "K&K Builders is one of the top builders in Trivandrum, Kerala, offering architecture, construction, interiors, renovation, swimming pools, fabrication and waterproofing.",
+  description: siteDescription,
+
+  applicationName: siteName,
 
   keywords: [
+    "K&K Builders",
+    "builders in Trivandrum",
     "top builders in Trivandrum",
     "best builders in Trivandrum",
-    "builders in Trivandrum",
-    "best home builders Trivandrum",
-    "construction company Trivandrum",
+    "home builders in Trivandrum",
+    "construction company in Trivandrum",
+    "architecture company in Trivandrum",
+    "interior designers in Trivandrum",
     "home construction Kerala",
-    "interior designers Trivandrum",
-    "3D home design Trivandrum",
+    "builders in Kerala",
     "builders in Kollam",
     "builders in Alappuzha",
-    "K&K Builders",
+    "swimming pool construction Kerala",
   ],
+
+  authors: [
+    {
+      name: siteName,
+      url: siteUrl,
+    },
+  ],
+
+  creator: siteName,
+  publisher: siteName,
+
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: siteUrl,
-    siteName: "K&K Builders",
+    url: "/",
+    siteName,
 
     title: "Top Builders in Trivandrum | K&K Builders",
 
@@ -85,39 +109,54 @@ export const metadata: Metadata = {
     title: "Top Builders in Trivandrum | K&K Builders",
 
     description:
-      "Architecture, construction, interiors and premium homes in Trivandrum.",
+      "Architecture, construction, interiors and premium homes in Trivandrum, Kerala.",
 
-    images: ["/images/og-image.jpg"],
-  },
-
-  alternates: {
-    canonical: siteUrl,
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        alt: "K&K Builders - Top Builders in Trivandrum",
+      },
+    ],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
+/**
+ * Structured data for Google and other search engines.
+ */
 const localBusinessSchema = {
   "@context": "https://schema.org",
 
-  "@type": [
-    "GeneralContractor",
-    "HomeAndConstructionBusiness",
-  ],
+  "@type": ["GeneralContractor", "HomeAndConstructionBusiness"],
 
   "@id": `${siteUrl}/#business`,
 
   name: company.legal,
 
-  alternateName: company.name,
+  alternateName: [
+    company.name,
+    "K&K Builders",
+    "K and K Builders",
+  ],
 
   description:
-    "K&K Builders is a full-service design-and-build company and one of the top builders in Trivandrum, Kerala, offering architecture, construction, interior design, renovation, swimming pools, fabrication and waterproofing.",
+    "K&K Builders is a design and construction company in Trivandrum, Kerala, offering architecture, construction, interior design, renovation, swimming pools, fabrication and waterproofing.",
 
   url: siteUrl,
+
+  inLanguage: "en-IN",
 
   telephone: company.phonePrimary,
 
@@ -133,8 +172,8 @@ const localBusinessSchema = {
     "@type": "PostalAddress",
     streetAddress: company.address.line1,
     addressLocality: company.address.city,
-    postalCode: company.address.pin,
     addressRegion: "Kerala",
+    postalCode: company.address.pin,
     addressCountry: "IN",
   },
 
@@ -145,6 +184,10 @@ const localBusinessSchema = {
   },
 
   areaServed: [
+    {
+      "@type": "City",
+      name: "Thiruvananthapuram",
+    },
     {
       "@type": "City",
       name: "Trivandrum",
@@ -163,20 +206,24 @@ const localBusinessSchema = {
     },
   ],
 
-  sameAs: company.socials.map((s) => s.href),
+  sameAs: company.socials.map((social) => social.href),
 
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Services",
 
-    itemListElement: services.map((s) => ({
+    name: "K&K Builders Services",
+
+    itemListElement: services.map((service) => ({
       "@type": "Offer",
 
       itemOffered: {
         "@type": "Service",
-        name: s.title,
-        description: s.short,
-        url: `${siteUrl}/services/${s.slug}`,
+
+        name: service.title,
+
+        description: service.short,
+
+        url: `${siteUrl}/services/${service.slug}`,
       },
     })),
   },
@@ -207,11 +254,14 @@ export default function RootLayout({
         </a>
 
         <ScrollProgress />
+
         <Nav />
+
         <FloatingActions />
 
         <SmoothScroll>
           <main id="main">{children}</main>
+
           <Footer />
         </SmoothScroll>
       </body>
